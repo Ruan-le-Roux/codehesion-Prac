@@ -8,7 +8,7 @@ import axios from 'axios'
 
 function Register() {
     const access_token = localStorage.getItem("access_token");
-    // console.log(access_token);
+    console.log(access_token);
 
 
 
