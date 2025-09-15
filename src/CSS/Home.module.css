@@ -2,6 +2,21 @@
 {
     align-self: start;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.link
+{
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.link:hover
+{
+    background-color: rgb(225, 225, 225);
 }

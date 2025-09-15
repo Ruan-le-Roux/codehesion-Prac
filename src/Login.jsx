@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useFormik, Form, Field } from 'formik'
 import {useNavigate} from 'react-router-dom'
-import './CSS/App.css'
+import styles from './CSS/Login.module.css'
 import axios from 'axios'
 // import { formData } from "new FormData"
 
@@ -13,7 +13,7 @@ function Login() {
   const [scope, setScope] = useState("");
   // const [username, setUsername] = useState("");
   // const [password, setPassword] = useState("");
-  const [isError, setError] = useState(false);
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
   
@@ -59,8 +59,17 @@ function Login() {
         navigate('/register');
       })
       .catch(function (error){
+        if(error.response && error.response.status === 400)
+        {
+          setError("Incorrect username or password");
+        }
+        else
+        {
+          setError("Internal server error try again later.");
+
+        }
         localStorage.setItem("access_token","");
-        console.log(error);
+        // console.log(error);
       })
     }
 
@@ -69,7 +78,7 @@ function Login() {
 
 
   return (
-    <div>
+    <div className={styles.parent}>
       {/* <Formik
         initialValues={{username: '', password: ''}}
         // validate={values => {
@@ -83,19 +92,21 @@ function Login() {
 
         
       > */}
-        <form onSubmit={formik.handleSubmit}>
-          <label htmlFor="username">UserName:</label>
-          <input type="email" id="username" name="username" placeholder="Username"  value={formik.values.username} onChange={formik.handleChange}/>
+        <form onSubmit={formik.handleSubmit} className={styles.form}>
+          <label htmlFor="username" className={`${styles.left} ${styles.text}`}>Email:</label>
+          <input className={`${styles.input}`} type="email" id="username" name="username" placeholder="example@email.com"  value={formik.values.username} onChange={formik.handleChange}/>
 
-          <br/>
+          {/* <br/> */}
           
-          <label htmlFor="passwors">Password:</label>
-          <input type="password" id="password" name="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange}/>
+          <label htmlFor="password" className={`${styles.left} ${styles.text}`}>Password:</label>
+          <input className={styles.input} type="password" id="password" name="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange}/>
 
-          <br/>
+          {/* <br/> */}
           
-          <button type="submit">Sign In</button>
+          <button type="submit" className={styles.button}>Sign In</button>
         </form>
+
+        {error.length > 0 && <p className={styles.error}>{error}</p>}
 
       {/* </Formik> */}
 

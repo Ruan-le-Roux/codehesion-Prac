@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 import styles from './CSS/Home.module.css';
 
@@ -39,9 +39,10 @@ function Home ()
     return (
         <div className={styles.categoriesParent}>
             {categories.map((category, index) => (
-                <div key={category[0]} onClick={() => navigate(`/words/${category[0]}`)}>
-                    <p key={category[0]}>{category[1]}</p>
-                </div>
+                // <div key={category[0]} onClick={() => navigate(`/words/${category[0]}`)}>
+                    <Link to= {`/words/${category[0]}`} key={category[0]} className={styles.link} >{category[1]}</Link>
+                    // <p key={category[0]}>{category[1]}</p>
+                // </div>
             ))}
 
         </div>

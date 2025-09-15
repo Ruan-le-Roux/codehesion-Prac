@@ -11,6 +11,7 @@ function Words ()
     // console.log("iod: ", id);
     const [words, setWords] = useState([]);
     const [filteredWords, setFilteredWords] = useState([]);
+    const [noResults, setResults] = useState(false);
     const access_token = localStorage.getItem("access_token");
 
     useEffect(() => {
@@ -21,12 +22,20 @@ function Words ()
             }
         })
         .then(function (response) {
-            setWords(response.data.data.items);
+            if(response.data.data.items.length > 0)
+            {
+                setWords(response.data.data.items);
+            }
+            else
+            {
+                setResults(true);
+            }
             // console.log(words.filter(word => word.categories.id === id.id));
             // console.log(id);
         })
         .catch(function (error) {
             console.log(error);
+            setResults(true);
         })
     }, []);
 
@@ -34,16 +43,27 @@ function Words ()
         const filter = words.filter(word => {return word.categories.some(category => category.id === parseInt(id.id) );});
         // console.log(filteredWords);
 
-        setFilteredWords(filter);
+        if(filter.length > 0)
+        {
+            setFilteredWords(filter);
+            setResults(false);
+        }
+        else
+        {
+            setResults(true);
+        }
+
     }, [words]);
 
     return(
         <div className={styles.parent}>
-            {filteredWords.map((word, index) => (
-                <div key={word.id}>
-                    <p>{word.name}</p>
-                </div>
-            ))}
+            {noResults ? (<p className={styles.noResults}>No results</p> ) : (
+                filteredWords.map((word, index) => (
+                    <div key={word.id} className={styles.div}>
+                        <p className={styles.text}>{word.name}</p>
+                    </div>
+                ))
+            )}
         </div>
     );
 

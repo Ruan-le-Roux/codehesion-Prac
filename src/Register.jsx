@@ -1,14 +1,16 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useFormik, Form, Field } from 'formik'
-// import './App.css'
+import styles from './CSS/Login.module.css';
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom';
 // import { formData } from "new FormData"
 
 function Register() {
     const access_token = localStorage.getItem("access_token");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
     // console.log(access_token);
 
 
@@ -35,11 +37,20 @@ function Register() {
       })
       .then(function (response){
         console.log(response);
+        navigate('/home');
         // localStorage.setItem("access_token", response.data.access_token);
       })
       .catch(function (error){
-        console.log(error);
-        setError("There was an error loggin you in: ", error);
+        if(error.response && error.response.status === 400)
+        {
+            setError(`User with email: ${values.email} already exists`);
+        }
+        else
+        {
+            setError("Internal server error try again later.");
+        }
+        // console.log(error);
+        // setError("There was an error loggin you in: ", error);
       })
     }
 
@@ -48,29 +59,29 @@ function Register() {
 
 
   return (
-    <div>
-        <form onSubmit={formik.handleSubmit}>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Name"  value={formik.values.name} onChange={formik.handleChange}/>
+    <div className = {styles.parent}>
+        <form className={styles.form} onSubmit={formik.handleSubmit}>
+          <label className={`${styles.left} ${styles.text}`} htmlFor="name">Name:</label>
+          <input className={`${styles.input}`} type="text" id="name" name="name" placeholder="Name"  value={formik.values.name} onChange={formik.handleChange}/>
           
-          <br/>
+          {/* <br/> */}
           
-          <label htmlFor="surname">Surname:</label>
-          <input type="text" id="surname" name="surname" placeholder="Surname"  value={formik.values.surname} onChange={formik.handleChange}/>
+          <label className={`${styles.left} ${styles.text}`} htmlFor="surname">Surname:</label>
+          <input className={`${styles.input}`} type="text" id="surname" name="surname" placeholder="Surname"  value={formik.values.surname} onChange={formik.handleChange}/>
           
-          <br/>
+          {/* <br/> */}
 
 
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="email@example.com"  value={formik.values.email} onChange={formik.handleChange}/>
+          <label className={`${styles.left} ${styles.text}`} htmlFor="email">Email:</label>
+          <input className={`${styles.input}`} ype="email" id="email" name="email" placeholder="email@example.com"  value={formik.values.email} onChange={formik.handleChange}/>
 
           {/* <br/> */}
-          <br/>
+          {/* <br/> */}
           
-          <button type="submit">Sign In</button>
+          <button type="submit" className={styles.button}>Sign In</button>
         </form>
 
-        {error.length !== 0 && <p>{error}</p>}
+        {error.length > 0 && <p className={styles.error}>{error}</p>}
 
     </div>
   )
