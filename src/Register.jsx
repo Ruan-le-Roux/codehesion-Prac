@@ -8,7 +8,8 @@ import axios from 'axios'
 
 function Register() {
     const access_token = localStorage.getItem("access_token");
-    console.log(access_token);
+    const [error, setError] = useState("");
+    // console.log(access_token);
 
 
 
@@ -38,6 +39,7 @@ function Register() {
       })
       .catch(function (error){
         console.log(error);
+        setError("There was an error loggin you in: ", error);
       })
     }
 
@@ -67,6 +69,8 @@ function Register() {
           
           <button type="submit">Sign In</button>
         </form>
+
+        {error.length !== 0 && <p>{error}</p>}
 
     </div>
   )
