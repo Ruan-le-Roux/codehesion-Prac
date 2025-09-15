@@ -8,7 +8,7 @@ import {useNavigate} from 'react-router-dom';
 // import { formData } from "new FormData"
 
 function Register() {
-    const access_token = localStorage.getItem("access_token");
+    const access_token = sessionStorage.getItem("access_token");
     const [error, setError] = useState("");
     const navigate = useNavigate();
     // console.log(access_token);

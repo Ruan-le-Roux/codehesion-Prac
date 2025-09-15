@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 import styles from './CSS/Words.module.css';
 
@@ -12,7 +13,8 @@ function Words ()
     const [words, setWords] = useState([]);
     const [filteredWords, setFilteredWords] = useState([]);
     const [noResults, setResults] = useState(false);
-    const access_token = localStorage.getItem("access_token");
+    const access_token = sessionStorage.getItem("access_token") || "";
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios("https://edeaf-api-staging.azurewebsites.net/v1/admin/Words?PageSize=1000", {
@@ -55,15 +57,22 @@ function Words ()
 
     }, [words]);
 
+    const handleGoBack = () => {
+        navigate(-1);
+    }
+
     return(
-        <div className={styles.parent}>
-            {noResults ? (<p className={styles.noResults}>No results</p> ) : (
-                filteredWords.map((word, index) => (
-                    <div key={word.id} className={styles.div}>
-                        <p className={styles.text}>{word.name}</p>
-                    </div>
-                ))
-            )}
+        <div >
+            <button onClick={handleGoBack} className={styles.button}>Go Back</button>
+            <div className={styles.parent}>
+                {noResults ? (<p className={styles.noResults}>No results</p> ) : (
+                    filteredWords.map((word, index) => (
+                        <div key={word.id} className={styles.div}>
+                            <p className={styles.text}>{word.name}</p>
+                        </div>
+                    ))
+                )}
+            </div>
         </div>
     );
 

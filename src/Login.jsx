@@ -55,7 +55,7 @@ function Login() {
       axios.post('https://edeaf-api-staging.azurewebsites.net/connect/token', formData)
       .then(function (response){
         // console.log(response);
-        localStorage.setItem("access_token", response.data.access_token);
+        sessionStorage.setItem("access_token", response.data.access_token);
         navigate('/register');
       })
       .catch(function (error){
@@ -68,7 +68,7 @@ function Login() {
           setError("Internal server error try again later.");
 
         }
-        localStorage.setItem("access_token","");
+        sessionStorage.setItem("access_token","");
         // console.log(error);
       })
     }
