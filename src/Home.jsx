@@ -7,7 +7,7 @@ import styles from './CSS/Home.module.css';
 function Home ()
 {
     const [categories, setCategories] = useState([]);
-    const access_token = localStorage.getItem("access_token");
+    const access_token = localStorage.getItem("access_token") || "";
     const navigate = useNavigate();
 
     useEffect(() => {
