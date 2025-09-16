@@ -62,18 +62,18 @@ function Register() {
     <div className = {styles.parent}>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
           <label className={`${styles.left} ${styles.text}`} htmlFor="name">Name:</label>
-          <input className={`${styles.input}`} type="text" id="name" name="name" placeholder="Name"  value={formik.values.name} onChange={formik.handleChange}/>
+          <input className={`${styles.input}`} type="text" id="name" name="name" placeholder="Name"  value={formik.values.name} onChange={formik.handleChange} required/>
           
           {/* <br/> */}
           
           <label className={`${styles.left} ${styles.text}`} htmlFor="surname">Surname:</label>
-          <input className={`${styles.input}`} type="text" id="surname" name="surname" placeholder="Surname"  value={formik.values.surname} onChange={formik.handleChange}/>
+          <input className={`${styles.input}`} type="text" id="surname" name="surname" placeholder="Surname"  value={formik.values.surname} onChange={formik.handleChange} required/>
           
           {/* <br/> */}
 
 
           <label className={`${styles.left} ${styles.text}`} htmlFor="email">Email:</label>
-          <input className={`${styles.input}`} ype="email" id="email" name="email" placeholder="email@example.com"  value={formik.values.email} onChange={formik.handleChange}/>
+          <input className={`${styles.input}`} ype="email" id="email" name="email" placeholder="email@example.com"  value={formik.values.email} onChange={formik.handleChange} required/>
 
           {/* <br/> */}
           {/* <br/> */}

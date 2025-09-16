@@ -94,12 +94,12 @@ function Login() {
       > */}
         <form onSubmit={formik.handleSubmit} className={styles.form}>
           <label htmlFor="username" className={`${styles.left} ${styles.text}`}>Email:</label>
-          <input className={`${styles.input}`} type="email" id="username" name="username" placeholder="example@email.com"  value={formik.values.username} onChange={formik.handleChange}/>
+          <input className={`${styles.input}`} type="email" id="username" name="username" placeholder="example@email.com"  value={formik.values.username} onChange={formik.handleChange} required/>
 
           {/* <br/> */}
           
           <label htmlFor="password" className={`${styles.left} ${styles.text}`}>Password:</label>
-          <input className={styles.input} type="password" id="password" name="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange}/>
+          <input className={styles.input} type="password" id="password" name="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange} required/>
 
           {/* <br/> */}
           
