@@ -9,6 +9,8 @@ function Home ()
     const [categories, setCategories] = useState([]);
     const access_token = sessionStorage.getItem("access_token") || "";
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
 
     useEffect(() => {
         axios.get("https://edeaf-api-staging.azurewebsites.net/v1/admin/categories", {
@@ -28,24 +30,36 @@ function Home ()
 
 
             setCategories(tempArr);
+            setError("");    
             // console.log(categories);
         })
         .catch(function (error) {
-            console.log(error);
+            // console.log(error);
+            setError("Internal server error try again later");    
         })
+        .finally(() => setLoading(false))
 
     }, []);
 
     return (
-        <div className={styles.categoriesParent}>
-            {categories.map((category, index) => (
-                // <div key={category[0]} onClick={() => navigate(`/words/${category[0]}`)}>
-                    <Link to= {`/words/${category[0]}`} key={category[0]} className={styles.link} >{category[1]}</Link>
-                    // <p key={category[0]}>{category[1]}</p>
-                // </div>
-            ))}
+        loading ? (<p>Loading...</p>) : error.length > 0 ? (<p>{error}</p>) : (
+                <div className={styles.parent}>
+                    <h1 className={styles.heading}>Select a tag to view all words</h1>
+                    <div className={styles.categoriesParent}>
+                        {categories.length == 0 && <p>No categories</p>}
 
-        </div>
+                        {categories.map((category, index) => (
+                            // <div key={category[0]} onClick={() => navigate(`/words/${category[0]}`)}>
+                                <Link to= {`/words/${category[0]}`} key={category[0]} className={styles.link} >{category[1]}</Link>
+                                // <p key={category[0]}>{category[1]}</p>
+                            // </div>
+                        ))}
+
+                    </div>
+
+                </div>
+            
+        )
     );
 }
 

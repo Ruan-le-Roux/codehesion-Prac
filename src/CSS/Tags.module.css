@@ -1,9 +1,21 @@
 .parent
 {
-    background-color: #949494;
-    padding: 20px;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
     border-radius: 10px;
     color: black;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.heading 
+{
+    margin: 0;
 }
 
 .table
@@ -13,7 +25,8 @@
 }
 
 
-.table {
+.table 
+{
 	width: 100%;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -25,13 +38,14 @@
 
 .table th 
 {
-  background: #808080;
-  color: black;
   padding: 12px 15px;
   text-align: left;
+  background: #6b6b6b;
+  color: white;
 }
 
-.table tr {
+.table tr 
+{
 	border-radius: 8px;
 	padding: 12px 15px;
 }
@@ -65,9 +79,10 @@
 
 .colorSwatch
 {
-    width: 150px;
-    height: 50px;
+    width: 100px;
+    height: 30px;
     border: 1px solid black;
+    margin: auto;
 }
 
 .table thead tr th
@@ -99,9 +114,11 @@
 
 .button
 {
+    width: 100%;
     background-color: #BD1E1E;
     transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
     color: white;
+    /* margin-bottom: 20px; */
 }
 
 .editButton
@@ -134,9 +151,6 @@
     color: white;
 }
 
-
-
-
 .button:hover, .editButton:hover
 {
     transform: scale(1.03);
@@ -157,3 +171,33 @@
     background-color: #222222;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+
+.table tr:nth-child(even) 
+{
+    background: #c9c9c9;
+}
+
+.table tr:hover 
+{
+    background: rgb(87, 87, 170);
+}
+
+.copy 
+{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #BD1E1E;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.copy:hover 
+{
+    color: #A41A1A;
+}
+
+
+
+
+

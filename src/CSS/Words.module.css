@@ -1,40 +1,78 @@
-.parent
+.parent 
 {
-    align-self: start;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.button 
+{
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background-color: #BD1E1E;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover 
+{
+    background-color: #A41A1A;
+    transform: scale(1.03);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.contentParent 
+{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    background-color: white;
-    padding: 20px;
+    /* grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.div 
+{
+    padding: 1rem;
     border-radius: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
 }
 
-.div
+/* .div:hover 
 {
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background-color: #FFE6E6; 
+} */
+
+.text 
+{
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
 }
 
-.text
+.noResults 
 {
-    color: black;
-}
-.noResults
-{
-    color: black;
-    justify-self: center;
-    grid-column: 1 / span 4;
-}
-
-.button
-{
-    grid-column: 1 / span 2;
-    background-color: white;
-    transition: transform 0.5s ease;
-    margin-bottom: 10px;
-}
-.button:hover
-{
-    transform: scale(1.05);
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
 }

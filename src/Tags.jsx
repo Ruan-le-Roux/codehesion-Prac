@@ -85,7 +85,7 @@ function Tags()
     return(
         <div className={styles.parent}>
             {alert && <Alert message={message} show={alert} type={isGood} onClose={() => {setAlert(false)}}/>}
-            <h1>All tags</h1>
+            <h1 className={styles.heading}>All tags</h1>
             <button className={styles.button} onClick={() => navigate('/tags/create')}>Create a tag</button>
             <table className={styles.table}>
                 <thead>

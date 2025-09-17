@@ -79,37 +79,24 @@ function Login() {
 
   return (
     <div className={styles.parent}>
-      {/* <Formik
-        initialValues={{username: '', password: ''}}
-        // validate={values => {
-        //   const errors = {};
-        //   if(!values.username)
-        //   {
-        //     errors.email = 'Required';
-        //   }
-        // }}
-        // onSubmit= (values, {setSubmitting, resetForm}) => {
+      <h1 className={styles.heading}>Login</h1>
 
-        
-      > */}
         <form onSubmit={formik.handleSubmit} className={styles.form}>
-          <label htmlFor="username" className={`${styles.left} ${styles.text}`}>Email:</label>
-          <input className={`${styles.input}`} type="email" id="username" name="username" placeholder="example@email.com"  value={formik.values.username} onChange={formik.handleChange} required/>
+          <div className={styles.formInput}>
+            <label htmlFor="username" className={`${styles.left} ${styles.text}`}>Email</label>
+            <input className={`${styles.input}`} type="email" id="username" name="username" placeholder="example@email.com"  value={formik.values.username} onChange={formik.handleChange} required/>
 
-          {/* <br/> */}
-          
-          <label htmlFor="password" className={`${styles.left} ${styles.text}`}>Password:</label>
-          <input className={styles.input} type="password" id="password" name="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange} required/>
+          </div>
 
-          {/* <br/> */}
-          
+          <div className={styles.formInput}>
+            <label htmlFor="password" className={`${styles.left} ${styles.text}`}>Password</label>
+            <input className={styles.input} type="password" id="password" name="password" placeholder="Password" value={formik.values.password} onChange={formik.handleChange} required/>
+          </div>          
+
           <button type="submit" className={styles.button}>Sign In</button>
         </form>
 
         {error.length > 0 && <p className={styles.error}>{error}</p>}
-
-      {/* </Formik> */}
-
     </div>
   )
 }

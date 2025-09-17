@@ -62,9 +62,9 @@ function Words ()
     }
 
     return(
-        <div >
+        <div className={styles.parent}>
             <button onClick={handleGoBack} className={styles.button}>Go Back</button>
-            <div className={styles.parent}>
+            <div className={styles.contentParent}>
                 {noResults ? (<p className={styles.noResults}>No results</p> ) : (
                     filteredWords.map((word, index) => (
                         <div key={word.id} className={styles.div}>

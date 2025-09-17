@@ -1,18 +1,3 @@
-/* .parent
-{
-    display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
-    padding: 20px;
-}
-
-.categoryParent
-{
-    display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
-    padding: 20px;
-
-} */
-
 .wordsParent 
 {
     padding: 2rem;
@@ -24,6 +9,7 @@
 
 .searchParent 
 {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
@@ -50,7 +36,6 @@
 .parent 
 {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
 }

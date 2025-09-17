@@ -1,4 +1,4 @@
-.categoriesParent
+/* .categoriesParent
 {
     align-self: start;
     display: grid;
@@ -19,4 +19,60 @@
 .link:hover
 {
     background-color: rgb(225, 225, 225);
+} */
+
+/* Home.module.css */
+
+.parent
+{
+    background-color: #f9f9f9;
+    /* background-color: white; */
+    padding: 20px;
+    border-radius: 10px;
 }
+
+.heading
+{
+    margin-top: 0;
+}
+
+.categoriesParent 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+
+.link 
+{
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link:hover 
+{
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+h1 
+{
+    text-align: center;
+    margin-top: 2rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+

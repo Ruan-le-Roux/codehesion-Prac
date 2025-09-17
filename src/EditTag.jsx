@@ -82,7 +82,7 @@ function CreateTag()
                     </div>
 
                     <div className={styles.buttonsParent}>
-                        <button className={styles.button} type="submit">Create Tag</button>
+                        <button className={styles.button} type="submit">Edit Tag</button>
                         <button className={styles.button2} onClick={() => `${formik.handleReset()} ${setError("")}`}>Reset Form</button>
                         <button className={styles.button3} type="button" onClick={() => navigate(-1)}>Back</button>
                     </div>

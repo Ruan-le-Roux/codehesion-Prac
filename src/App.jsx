@@ -11,11 +11,13 @@ import CreateTag from './CreateTag'
 import EditTag from './EditTag'
 import AllWords from './AllWords'
 import AddToCategory from './AddToCategory'
+import NavBar from './NavBar'
 
 function App ()
 {
     return (
         <Router>
+            <NavBar />
             <Routes>
                 <Route path="/" element={<Login/>}/>
                 <Route path="/home" element={<Home/>}/>
@@ -29,6 +31,8 @@ function App ()
                 <Route path="/category/:wordId" element={<AddToCategory/>}/>
             </Routes>
         </Router>
+
+        
     );
 }
 

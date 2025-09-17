@@ -1,0 +1,45 @@
+.navbar 
+{
+    width: 100%; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 1000; 
+    font-family: Arial, sans-serif;
+}
+
+.links 
+{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.links a 
+{
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.links a:hover 
+{
+    background-color: #BD1E1E;
+    color: white;
+    transform: scale(1.03);
+}
+
+.active 
+{
+    background-color: #BD1E1E;
+    color: white;
+    transform: scale(1.03);
+}

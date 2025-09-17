@@ -60,25 +60,28 @@ function Register() {
 
   return (
     <div className = {styles.parent}>
+      <h1 className={styles.heading}>Register a user</h1>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
-          <label className={`${styles.left} ${styles.text}`} htmlFor="name">Name:</label>
-          <input className={`${styles.input}`} type="text" id="name" name="name" placeholder="Name"  value={formik.values.name} onChange={formik.handleChange} required/>
+          <div className={styles.formInput}>
+            <label className={`${styles.left} ${styles.text}`} htmlFor="name">Name</label>
+            <input className={`${styles.input}`} type="text" id="name" name="name" placeholder="Name"  value={formik.values.name} onChange={formik.handleChange} required/>
+          </div>
           
-          {/* <br/> */}
+          <div className={styles.formInput}>
+            <label className={`${styles.left} ${styles.text}`} htmlFor="surname">Surname</label>
+            <input className={`${styles.input}`} type="text" id="surname" name="surname" placeholder="Surname"  value={formik.values.surname} onChange={formik.handleChange} required/>
+          </div>
+
+          <div className={styles.formInput}>
+            <label className={`${styles.left} ${styles.text}`} htmlFor="email">Email</label>
+            <input className={`${styles.input}`} ype="email" id="email" name="email" placeholder="email@example.com"  value={formik.values.email} onChange={formik.handleChange} required/>
+          </div>
           
-          <label className={`${styles.left} ${styles.text}`} htmlFor="surname">Surname:</label>
-          <input className={`${styles.input}`} type="text" id="surname" name="surname" placeholder="Surname"  value={formik.values.surname} onChange={formik.handleChange} required/>
           
-          {/* <br/> */}
 
 
-          <label className={`${styles.left} ${styles.text}`} htmlFor="email">Email:</label>
-          <input className={`${styles.input}`} ype="email" id="email" name="email" placeholder="email@example.com"  value={formik.values.email} onChange={formik.handleChange} required/>
-
-          {/* <br/> */}
-          {/* <br/> */}
           
-          <button type="submit" className={styles.button}>Sign In</button>
+          <button type="submit" className={styles.button}>Register</button>
         </form>
 
         {error.length > 0 && <p className={styles.error}>{error}</p>}

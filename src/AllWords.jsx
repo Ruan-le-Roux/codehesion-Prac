@@ -16,6 +16,7 @@ function AddToCategory()
     const [alert, setAlert] = useState(false);
     const [message, setMessage] = useState("");
     const [isGood, setIsGood] = useState("");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios.get('https://edeaf-api-staging.azurewebsites.net/v1/admin/Words?PageSize=1000', {
@@ -31,6 +32,7 @@ function AddToCategory()
         .catch(function (error) {
 
         })
+        .finally(() => setLoading(false))
 
     }, []);
 
@@ -59,28 +61,30 @@ function AddToCategory()
     }, [location.state]);
 
     return(
-        <div className={styles.wordsParent}>
-            {alert && <Alert message={message} show={alert} type={isGood} onClose={() => {setAlert(false)}}/>}
-            
-            <div className={styles.searchParent}>
-                <input type="text" value={search} placeholder="Search words..." onChange={e => setSearch(e.target.value)}/>
-            </div>
-
-            <div className={styles.parent}>
-                {filteredWords.map((word) => (
-                    <div key={word.id} className={styles.contentParent}>
-                        <h1>{word.name}</h1>
-                        <div className={styles.categoryParent}>
-                            {word.categories.length == 0 && <p className={styles.noCat}>No category</p>}
-                            {word.categories.map((cat) => (
-                                <p className={styles.cat} key={cat.id} >{cat.name}</p>
-                            ))}
-                        </div>
-                        <button className={styles.button} type="button" onClick={() => navigate(`/category/${word.id}`)}>Add this word to a category</button>
+        loading ? (<p>Loading...</p>) : (
+                <div className={styles.wordsParent}>
+                    {alert && <Alert message={message} show={alert} type={isGood} onClose={() => {setAlert(false)}}/>}
+                    
+                    <div className={styles.searchParent}>
+                        <input type="text" value={search} placeholder="Search words..." onChange={e => setSearch(e.target.value)}/>
                     </div>
-                ))}
-            </div>
-        </div>
+        
+                    <div className={styles.parent}>
+                        {filteredWords.length == 0 && <p>No words</p>}
+                        {filteredWords.map((word) => (
+                            <div key={word.id} className={styles.contentParent}>
+                                <h1>{word.name}</h1>
+                                <div className={styles.categoryParent}>
+                                    {word.categories.length == 0 && <p className={styles.noCat}>No category</p>}
+                                    {word.categories.map((cat) => (
+                                        <p className={styles.cat} key={cat.id} >{cat.name}</p>
+                                    ))}
+                                </div>
+                                <button className={styles.button} type="button" onClick={() => navigate(`/category/${word.id}`)}>Add this word to a category</button>
+                            </div>
+                        ))}
+                    </div>
+                </div>)
     );
 }
 
