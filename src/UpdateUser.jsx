@@ -128,7 +128,7 @@ function UpdateUser()
                             <div className={styles.buttonsParent}>
                                 <button className={styles.button} type="submit">Update User</button>
                                 <button className={styles.button2} onClick={formik.handleReset}>Revert Changes</button>
-                                <button className={styles.button3} onClick={() => setEdit(false)}>Cancel</button>
+                                <button className={styles.button3} type="button"onClick={() => setEdit(false)}>Cancel</button>
                             </div>
 
                         </form>

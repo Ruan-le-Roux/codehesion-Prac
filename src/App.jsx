@@ -6,6 +6,9 @@ import Register from './Register'
 import Home from './Home'
 import Words from './Words'
 import UpdateUser from './UpdateUser'
+import Tags from './Tags'
+import CreateTag from './CreateTag'
+import EditTag from './EditTag'
 
 function App ()
 {
@@ -17,6 +20,9 @@ function App ()
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/words/:id" element={<Words/>}/>
                 <Route path="/updateUser" element={<UpdateUser/>}/>
+                <Route path="/tags" element={<Tags/>}/>
+                <Route path="/tags/create" element={<CreateTag/>}/>
+                <Route path="/tags/edit/:id" element={<EditTag/>}/>
             </Routes>
         </Router>
     );

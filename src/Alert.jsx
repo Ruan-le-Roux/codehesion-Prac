@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles  from './CSS/Alert.module.css';
 
-function Alert({ message = "Form submitted!", show, onClose }) 
+function Alert({ message = "Form submitted!", show, type, onClose }) 
 {
     const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ function Alert({ message = "Form submitted!", show, onClose })
     if (!show) return null;
 
     return (
-        <div className={styles.notification}>{message}</div>
+        <div className={type === "success" ? styles.notificationGood : styles.notificationBad}>{message}</div>
     );
 }
 

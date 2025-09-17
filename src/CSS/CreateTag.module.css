@@ -1,0 +1,183 @@
+.parent
+{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+}
+
+.contentParent
+{
+    display: grid;
+    grid-template-rows: 1fr 2fr 0.5fr ;
+    grid-gap: 20px;
+}
+
+.content
+{
+    margin-bottom: 20px;
+    display: grid;
+    grid-template: auto auto auto / 1fr 2fr;
+    align-content: start;
+    grid-gap: 20px;
+}
+
+.heading2
+{
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.form
+{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-gap: 20px;
+}
+
+.formInput
+{
+    display: grid;
+}
+
+.formInput input
+{
+    border: 0;
+    padding: 10px 10px 10px 0px;
+    border-radius: 8px;
+    border-bottom: 1px solid black;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.formInput 
+{
+    position: relative;
+}
+
+.formInput input 
+{
+    border: none;
+    border-bottom: 2px solid black; 
+    padding: 10px 0;
+    width: 100%;
+    outline: none;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.formInput::after 
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;            
+    width: 0;             
+    height: 2px;          
+    background-color: #BD1E1E; 
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+    z-index: 2;           
+}
+
+.formInput:focus-within::after 
+{
+    width: 100%;
+}
+
+.formInput label
+{
+    font-size: 12px;
+    color: #949494;
+}
+
+.content h3, .content p
+{
+    margin: 0;
+}
+
+.heading
+{
+    margin: 0;
+}
+
+.editButton
+{
+    background-color: #BD1E1E;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+
+}
+
+.button
+{
+    background-color: #BD1E1E;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+    margin-right: 5px;
+}
+.button2
+{
+    background-color: #666666;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+    margin-right: 5px;
+}
+.button3
+{
+    background-color: #000000;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+}
+
+
+
+
+.button:hover, .editButton:hover
+{
+    transform: scale(1.03);
+    background-color: #A41A1A;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.button2:hover 
+{
+    transform: scale(1.03);
+    background-color: #555555; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.button3:hover 
+{
+    transform: scale(1.03);
+    background-color: #222222;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.error
+{
+    color: red;
+}
+
+.colorParent
+{
+    display: grid;
+}
+
+.color
+{
+    background-color: transparent;
+    border: none;
+    width: 250px;
+    height: 40px;
+    justify-self: end;
+    grid-row: 1 / 2;
+}
+
+.colorParent label
+{
+    grid-row: 1 / 2;
+    align-self: center;
+}
+

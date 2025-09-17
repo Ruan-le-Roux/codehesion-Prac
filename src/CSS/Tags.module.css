@@ -1,0 +1,159 @@
+.parent
+{
+    background-color: #949494;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+}
+
+.table
+{
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+
+.table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	background: #fff;
+    color: black;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th 
+{
+  background: #808080;
+  color: black;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.table tr {
+	border-radius: 8px;
+	padding: 12px 15px;
+}
+
+
+.table tr:nth-child(even) 
+{
+  background: grey; 
+}
+
+.table td
+{
+	padding: 12px 15px;
+}
+
+
+.table tr:hover .copy 
+{
+	/* background: #BD1E1E; */
+	color: white;
+	/* cursor: pointer; */
+	transition: background 0.3s ease;
+}
+.table tr:hover
+{
+	background: #BD1E1E;
+	color: white;
+	/* cursor: pointer; */
+	transition: background 0.3s ease;
+}
+
+.colorSwatch
+{
+    width: 150px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.table thead tr th
+{
+    text-align: center;
+}
+
+.code
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    /* padding: 0; */
+    /* height: 100%; */
+}
+.code span
+{
+    align-self: center;
+    justify-self: start;
+    grid-row: 1 / 2;
+}
+.copy
+{
+    grid-row: 1 / 2;
+    background-color: transparent;
+    justify-self: end;
+    padding: 0
+}
+
+.button
+{
+    background-color: #BD1E1E;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+}
+
+.editButton
+{
+    background-color: #BD1E1E;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+
+}
+
+.button
+{
+    background-color: #BD1E1E;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+    margin-bottom: 10px;
+}
+.button2
+{
+    background-color: #666666;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+    margin-right: 5px;
+}
+.button3
+{
+    background-color: #000000;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    margin-left: 5px;
+    color: white;
+}
+
+
+
+
+.button:hover, .editButton:hover
+{
+    transform: scale(1.03);
+    background-color: #A41A1A;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.button2:hover 
+{
+    transform: scale(1.03);
+    background-color: #555555; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.button3:hover 
+{
+    transform: scale(1.03);
+    background-color: #222222;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
