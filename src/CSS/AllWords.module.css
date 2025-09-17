@@ -1,4 +1,4 @@
-.parent
+/* .parent
 {
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
@@ -11,4 +11,150 @@
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
     padding: 20px;
 
+} */
+
+.wordsParent 
+{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.searchParent 
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.searchParent input 
+{
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.searchParent input:focus 
+{
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+.parent 
+{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.contentParent 
+{
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contentParent:hover 
+{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.contentParent h1 
+{
+    font-size: 1.25rem;
+    margin: 0;
+    color: #333;
+}
+
+.categoryParent 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.cat 
+{
+    background-color: #007bff;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+}
+
+.noCat
+{
+    background-color: transparent;
+    color: black;
+}
+
+.button 
+{
+    align-self: start;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+.button
+{
+    background-color: #BD1E1E;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+    margin-right: 5px;
+}
+.button2
+{
+    background-color: #666666;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+    margin-right: 5px;
+}
+.button3
+{
+    background-color: #000000;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+}
+
+
+
+
+.button:hover, .editButton:hover
+{
+    transform: scale(1.03);
+    background-color: #A41A1A;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.button2:hover 
+{
+    transform: scale(1.03);
+    background-color: #555555; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.button3:hover 
+{
+    transform: scale(1.03);
+    background-color: #222222;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }

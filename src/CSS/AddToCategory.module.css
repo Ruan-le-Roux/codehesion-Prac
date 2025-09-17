@@ -1,0 +1,110 @@
+.parent 
+{
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.parent h1, .parent h2, .parent h3 
+{
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.heading 
+{
+    margin-top: 0;
+    text-align: center;
+}
+
+.form 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.categoryParent 
+{
+    display: flex;
+    align-items: center;
+    color: black;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.categoryParent:hover 
+{
+    background-color: #d0d0d0;
+}
+
+.categoryParent input[type="checkbox"] 
+{
+    width: 18px;
+    height: 18px;
+    accent-color: #007bff;
+}
+
+.button 
+{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: white;
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    height: 45px;
+}
+
+.button 
+{
+    background-color: #BD1E1E;
+}
+
+.button:hover 
+{
+    background-color: #A41A1A;
+    transform: scale(1.03);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.button2 
+{
+    height:45px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: white;
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #666666;
+}
+
+.button2:hover 
+{
+    background-color: #555555;
+    transform: scale(1.03);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.button3 
+{
+    background-color: #000000;
+}
+
+.button3:hover 
+{
+    background-color: #222222;
+    transform: scale(1.03);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
