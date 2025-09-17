@@ -9,6 +9,8 @@ import UpdateUser from './UpdateUser'
 import Tags from './Tags'
 import CreateTag from './CreateTag'
 import EditTag from './EditTag'
+import AllWords from './AllWords'
+import AddToCategory from './AddToCategory'
 
 function App ()
 {
@@ -23,6 +25,8 @@ function App ()
                 <Route path="/tags" element={<Tags/>}/>
                 <Route path="/tags/create" element={<CreateTag/>}/>
                 <Route path="/tags/edit/:id" element={<EditTag/>}/>
+                <Route path="/category" element={<AllWords/>}/>
+                <Route path="/category/:wordId" element={<AddToCategory/>}/>
             </Routes>
         </Router>
     );

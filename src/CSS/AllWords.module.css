@@ -1,0 +1,14 @@
+.parent
+{
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    padding: 20px;
+}
+
+.categoryParent
+{
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    padding: 20px;
+
+}
